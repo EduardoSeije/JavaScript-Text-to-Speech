@@ -30,6 +30,7 @@ function playText(text) {
   if (speechSynthesis.paused && speechSynthesis.speaking) {
     return speechSynthesis.resume()
   }
+  if (speechSynthesis.speaking) return;
   utterance.text = text;
   utterance.rate = speedInput.value || 1
   textInput.disabled = true;
